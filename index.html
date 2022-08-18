@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section >
+        <div class="main">
+            <div id="display" class="display"></div>
+            <div class="key-area">
+                <div onclick="clr()"class="btn btn-17">C</div>
+                <div onclick="AC()" class="btn btn-1">AC</div>
+                <div onclick="calculateAll()" class="btn btn-2">=</div>
+                <div onclick="getNum(7)" class="btn btn-3">7</div>
+                <div onclick="getNum(8)"class="btn btn-4">8</div>
+                <div onclick="getNum(9)"class="btn btn-5">9</div>
+                <div onclick="getNum('+')"class="btn btn-6">+</div>
+                <div onclick="getNum(4)"class="btn btn-7">4</div>
+                <div onclick="getNum(5)"class="btn btn-8">5</div>
+                <div onclick="getNum(6)"class="btn btn-9">6</div>
+                <div onclick="getNum(1)" class="btn btn-10">1</div>
+                <div onclick="getNum(2)"class="btn btn-11">2</div>
+                <div onclick="getNum(3)"class="btn btn-12">3</div>
+                <div onclick="getNum('-')"class="btn btn-13">-</div>
+                <div onclick="getNum('.')"class="btn btn-14">.</div>
+                <div onclick="getNum(0)"class="btn btn-15">0</div>
+                <div onclick="getNum('/')"class="btn btn-16">/</div>
+                <div onclick="getNum('*')"class="btn btn-17">*</div>
+                
+
+                
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        let display= document.getElementById('display')
+        function getNum (n){
+            display.innerText += n
+        }
+        function calculateAll(){
+            if(display.innerText == ''){
+                alert('Please Enter The valid Number')
+            } else{
+            try{     
+            display.innerText = eval(display.innerText)    
+        }
+        catch (err){
+            alert('Input Number is invalid')
+        }
+        }}
+        function AC (){
+            display.innerText = 0
+        }
+        function clr(){
+            display.innerText = display.innerText.slice(0, -1)
+        }
+    </script>
+</body>
+</html>
